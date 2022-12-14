@@ -3,17 +3,15 @@ import TodoItem from "./TodoItem";
 import update from "immutability-helper";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { MouseEventHandler, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Todo } from "../Types";
 import { initialState } from "../data";
 import FormInput from "./FormInput";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useLocalStorage } from "usehooks-ts";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState<Todo[]>(() => {
-    const data = localStorage.getItem("todos");
-    return data ? JSON.parse(data) : initialState;
-  });
+  const [todos, setTodos] = useLocalStorage("todos", initialState);
   const [filteredTodos, setFilteredTodos] = useState(todos);
   const [filter, setFilter] = useState<"All" | "Completed" | "Active">("All");
   const moveTodo = useCallback((dragIndex: number, hoverIndex: number) => {
@@ -71,9 +69,6 @@ const TodoList = () => {
     setTodos(activeTodos);
   };
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
   useEffect(() => {
     filterList(filter);
   }, [filter, todos]);

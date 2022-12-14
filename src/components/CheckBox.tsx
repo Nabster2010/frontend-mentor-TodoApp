@@ -1,8 +1,8 @@
 import classnames from "classnames";
-import { MouseEventHandler } from "react";
 import checkIcon from "../assets/icon-check.svg";
 
 type CheckBoxProps = {
+  id?: number;
   checked?: boolean;
   completeTask: () => void;
 };

@@ -16,7 +16,7 @@ const FormInput = ({ addTodo }: { addTodo: (task: string) => void }) => {
       onSubmit={handleSubmit}
       className="w-full h-12 rounded-md px-4  bg-white dark:bg-DGray6 flex items-center gap-4  "
     >
-      <CheckBox />
+      <CheckBox completeTask={() => {}} />
       <input
         autoFocus
         ref={inputRef}
