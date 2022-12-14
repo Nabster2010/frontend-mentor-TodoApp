@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 import update from "immutability-helper";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { useCallback, useEffect, useState } from "react";
+import { MouseEventHandler, useCallback, useEffect, useState } from "react";
 import { Todo } from "../Types";
 import { initialState } from "../data";
 import FormInput from "./FormInput";

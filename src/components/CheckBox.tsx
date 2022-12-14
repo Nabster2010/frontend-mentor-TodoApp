@@ -1,9 +1,10 @@
 import classnames from "classnames";
+import { MouseEventHandler } from "react";
 import checkIcon from "../assets/icon-check.svg";
 
 type CheckBoxProps = {
   checked?: boolean;
-  completeTask?: (id: number) => void;
+  completeTask: () => void;
 };
 
 const CheckBox = ({ checked = false, completeTask }: CheckBoxProps) => {
