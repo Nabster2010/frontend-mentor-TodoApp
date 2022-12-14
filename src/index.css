@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen w-full  bg-Gray1 text-DGray7  dark:bg-DGray7 dark:text-Gray1 font-JosefinSans text-lg;
+}
+.bg {
+  @apply bg-[url('/bg-mobile-light.jpg')] md:bg-[url('/bg-desktop-light.jpg')] dark:bg-[url('/bg-mobile-dark.jpg')] dark:md:bg-[url('/bg-desktop-dark.jpg')] bg-no-repeat bg-cover h-52;
+}
+.gradient {
+  @apply bg-gradient-to-br from-GradientFrom to-GradientTo;
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
