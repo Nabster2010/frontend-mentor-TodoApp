@@ -102,7 +102,7 @@ const TodoList = () => {
           <TransitionGroup>
             {filteredTodos.map((todo, i) => {
               return (
-                <CSSTransition key={todo.id} timeout={500} classNames="item">
+                <CSSTransition key={todo.id} timeout={300} classNames="item">
                   {renderTodo(todo, i, completeTask, deleteTodo)}
                 </CSSTransition>
               );
